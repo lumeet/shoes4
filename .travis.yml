@@ -26,7 +26,7 @@ notifications:
     on_success: change # [always|never|change] # default: change
     on_failure: change # [always|never|change] # default: always
 before_install:
-  - "bundle update" # recommended for caching for now see #981 for info
+  - "bundle update --path=${BUNDLE_PATH:-vendor/bundle}" # see #981
 before_script:
   - "export DISPLAY=:99.0"
   - "export SWT_GTK3=0"
